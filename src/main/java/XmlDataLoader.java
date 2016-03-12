@@ -37,7 +37,7 @@ public class XmlDataLoader {
         dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         CalendarGenerator generator = new CalendarGenerator(year);
         while((current = generator.generateData())!=null){
-            directoryPath =rootPath+ String.valueOf(current.get(Calendar.YEAR))+"/"+String.valueOf(current.get(Calendar.MONTH)+1)+"/";
+            directoryPath =rootPath + String.valueOf(current.get(Calendar.YEAR))+File.separator+String.valueOf(current.get(Calendar.MONTH)+1)+File.separator;
             dt = dateFormat.format(current.getTime());
             URL obj = null;
             String res="";
@@ -54,7 +54,7 @@ public class XmlDataLoader {
                     directory.mkdirs();
                 }
 
-                file = new File(directoryPath + "/" + filePath + ".xml");
+                file = new File(directoryPath + File.separator + filePath + ".xml");
 
                 if (!file.exists()) file.createNewFile();
                 bw = new BufferedWriter(new FileWriter(file));
