@@ -1,4 +1,5 @@
 import com.thoughtworks.xstream.XStream;
+import org.apache.commons.io.FileUtils;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -28,6 +29,19 @@ public class XmlDataLoader {
         XStream xstream = new XStream();
         xstream.autodetectAnnotations(true);
         ValCurs curs = (ValCurs)xstream.fromXML(new File(rootPath+path));
+        System.out.println("Data : "+curs.getDate());
+        for(Valute valute : curs.getValute()){
+            System.out.println("-------------------------------");
+            System.out.println();
+            System.out.println("valute ID : "+valute.getId());
+            System.out.println("valute num code : "+valute.getNumCode());
+            System.out.println("valute char code : "+valute.getCharCode());
+            System.out.println("valute nominal : "+valute.getNominal());
+            System.out.println("valute name : "+valute.getName());
+            System.out.println("valute value : "+valute.getValue());
+            System.out.println();
+            System.out.println("-------------------------------");
+        }
     }
     public static void loadXMLFromService(){
 
@@ -73,7 +87,11 @@ public class XmlDataLoader {
 
     }
     public static void main(String[] args) {
-        //File directoryToDelete = new File(rootPath);
+        try {
+            FileUtils.deleteDirectory(new File(rootPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         loadXMLFromService();
         getCursByDate(20, 2, 2012);
     }

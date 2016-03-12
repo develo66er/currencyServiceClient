@@ -1,8 +1,10 @@
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 @XStreamAlias("Valute")
 public class Valute {
     @XStreamAlias("ID")
+    @XStreamAsAttribute
     private String id;
     @XStreamAlias("NumCode")
     private String numCode;
