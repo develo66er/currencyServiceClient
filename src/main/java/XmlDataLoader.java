@@ -13,8 +13,8 @@ public class XmlDataLoader {
     private static Calendar current;
     private static SimpleDateFormat dateFormat;
     private final static String endpointURL = "https://www.bnm.md/en/official_exchange_rates";
-    private static BufferedInputStream bis;
-    private static DataInputStream dis;
+    private static InputStreamReader isr;
+    private static BufferedReader br;
     private static BufferedWriter bw;
     private static File directory;
     private static File file;
@@ -29,7 +29,7 @@ public class XmlDataLoader {
         xstream.autodetectAnnotations(true);
         ValCurs curs = (ValCurs)xstream.fromXML(new File(rootPath+path));
     }
-    public void loadXMLFromService(){
+    public static void loadXMLFromService(){
 
         String directoryPath;
         String filePath;
@@ -46,8 +46,8 @@ public class XmlDataLoader {
                 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
                 con.setRequestMethod("GET");
                 InputStream in = con.getInputStream();
-                bis =new BufferedInputStream(in);
-                dis = new DataInputStream(bis);
+                isr =new InputStreamReader(in);
+                br = new BufferedReader(isr);
                 filePath = "XMl_"+String.valueOf(current.get(Calendar.DAY_OF_MONTH));
                 directory = new File(directoryPath);
                 if(!directory.exists()){
@@ -58,12 +58,12 @@ public class XmlDataLoader {
 
                 if (!file.exists()) file.createNewFile();
                 bw = new BufferedWriter(new FileWriter(file));
-                while((res = dis.readLine())!=null) {
+                while((res = br.readLine())!=null) {
                     bw.write(res);
                 }
                 bw.close();
-                dis.close();
-                bis.close();
+                isr.close();
+                br.close();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -73,6 +73,8 @@ public class XmlDataLoader {
 
     }
     public static void main(String[] args) {
+        //File directoryToDelete = new File(rootPath);
+        loadXMLFromService();
         getCursByDate(20, 2, 2012);
     }
 }

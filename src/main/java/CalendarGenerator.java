@@ -3,9 +3,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class CalendarGenerator {
-    static Calendar current;
-    Calendar last;
-    SimpleDateFormat dateFormat;
+    private static Calendar current;
+    private Calendar last;
+    private SimpleDateFormat dateFormat;
     public CalendarGenerator(int startYear){
         last = new GregorianCalendar();
         dateFormat = new SimpleDateFormat("dd.MM.yyyy");
@@ -14,7 +14,6 @@ public class CalendarGenerator {
     public Calendar generateData() {
         current.add(Calendar.DAY_OF_MONTH, 1);
         if (current.compareTo(last)<0) {
-            System.out.println("currentin. " + dateFormat.format(current.getTime()));
             return current;
         }else
             return null;
