@@ -1,4 +1,5 @@
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
@@ -19,28 +20,46 @@ public class XmlDataLoader {
     private static BufferedWriter bw;
     private static File directory;
     private static File file;
-    private static final int year = 1999;
-    private static final String rootPath = System.getProperty("user.dir")+File.separator +"XML"+File.separator;
+    private static final String rootPathXML = System.getProperty("user.dir")+File.separator +"XML"+File.separator;
+    private static final String rootPathJSON = System.getProperty("user.dir")+File.separator +"JSON"+File.separator;
     public XmlDataLoader(){
 
     }
-    public static void getCursByDate(int day, int month, int year){
+    public static ValCurs getCursByDate(int day, int month, int year){
         String path = String.valueOf(year)+File.separator+String.valueOf(month)+File.separator+"XMl_"+String.valueOf(day) + ".xml";
         XStream xstream = new XStream();
         xstream.autodetectAnnotations(true);
-        ValCurs curs = (ValCurs)xstream.fromXML(new File(rootPath+path));
-        System.out.println("Data : "+curs.getDate());
-        for(Valute valute : curs.getValute()){
-            System.out.println("-------------------------------");
-            System.out.println();
-            System.out.println("valute ID : "+valute.getId());
-            System.out.println("valute num code : "+valute.getNumCode());
-            System.out.println("valute char code : "+valute.getCharCode());
-            System.out.println("valute nominal : "+valute.getNominal());
-            System.out.println("valute name : "+valute.getName());
-            System.out.println("valute value : "+valute.getValue());
-            System.out.println();
-            System.out.println("-------------------------------");
+        ValCurs curs = (ValCurs)xstream.fromXML(new File(rootPathXML+path));
+        return curs;
+    }
+
+    public static void convertXmlToJSON(){
+        ValCurs curs = null;
+        String directoryPath;
+        String filePath;
+        CalendarGenerator generator = new CalendarGenerator(3);
+        while((current = generator.generateData())!=null){
+            directoryPath =rootPathJSON + String.valueOf(current.get(Calendar.YEAR))+File.separator+String.valueOf(current.get(Calendar.MONTH)+1)+File.separator;
+            filePath = "JSON_"+String.valueOf(current.get(Calendar.DAY_OF_MONTH));
+            curs = getCursByDate(current.get(Calendar.DAY_OF_MONTH),current.get(Calendar.MONTH)+1,current.get(Calendar.YEAR));
+            XStream xstream = new XStream(new JsonHierarchicalStreamDriver());
+            xstream.setMode(XStream.NO_REFERENCES);
+            //xstream.alias("ValCurs", ValCurs.class);
+            directory = new File(directoryPath);
+            if(!directory.exists()){
+                directory.mkdirs();
+            }
+            file = new File(directoryPath + File.separator + filePath + ".json");
+
+            if (!file.exists()) try {
+                file.createNewFile();
+                bw = new BufferedWriter(new FileWriter(file));
+                bw.write(xstream.toXML(curs));
+                bw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
     public static void loadXMLFromService(){
@@ -49,9 +68,9 @@ public class XmlDataLoader {
         String filePath;
         current = null;
         dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        CalendarGenerator generator = new CalendarGenerator(year);
+        CalendarGenerator generator = new CalendarGenerator(3);
         while((current = generator.generateData())!=null){
-            directoryPath =rootPath + String.valueOf(current.get(Calendar.YEAR))+File.separator+String.valueOf(current.get(Calendar.MONTH)+1)+File.separator;
+            directoryPath =rootPathXML + String.valueOf(current.get(Calendar.YEAR))+File.separator+String.valueOf(current.get(Calendar.MONTH)+1)+File.separator;
             dt = dateFormat.format(current.getTime());
             URL obj = null;
             String res="";
@@ -87,12 +106,13 @@ public class XmlDataLoader {
 
     }
     public static void main(String[] args) {
-        try {
-            FileUtils.deleteDirectory(new File(rootPath));
+       try {
+           FileUtils.deleteDirectory(new File(rootPathXML));
+           FileUtils.deleteDirectory(new File(rootPathJSON));
         } catch (IOException e) {
             e.printStackTrace();
         }
         loadXMLFromService();
-        getCursByDate(20, 2, 2012);
+        convertXmlToJSON();
     }
 }

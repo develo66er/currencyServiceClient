@@ -1,0 +1,342 @@
+{"ValCurs": {
+  "date": "02.02.2016",
+  "name": "Official exchange rate",
+  "valute": [
+    {
+      "id": "47",
+      "numCode": "978",
+      "charCode": "EUR",
+      "nominal": "1",
+      "name": "Euro",
+      "value": 22.1369
+    },
+    {
+      "id": "44",
+      "numCode": "840",
+      "charCode": "USD",
+      "nominal": "1",
+      "name": "US Dollar",
+      "value": 20.3697
+    },
+    {
+      "id": "36",
+      "numCode": "643",
+      "charCode": "RUB",
+      "nominal": "1",
+      "name": "Russian Ruble",
+      "value": 0.2686
+    },
+    {
+      "id": "35",
+      "numCode": "946",
+      "charCode": "RON",
+      "nominal": "1",
+      "name": "Romanian Leu",
+      "value": 4.8887
+    },
+    {
+      "id": "43",
+      "numCode": "980",
+      "charCode": "UAH",
+      "nominal": "1",
+      "name": "Ukraine Hryvnia",
+      "value": 0.7972
+    },
+    {
+      "id": "61",
+      "numCode": "784",
+      "charCode": "AED",
+      "nominal": "1",
+      "name": "U.A.E. Dirham",
+      "value": 5.5459
+    },
+    {
+      "id": "64",
+      "numCode": "008",
+      "charCode": "ALL",
+      "nominal": "10",
+      "name": "Albanian lek",
+      "value": 1.603
+    },
+    {
+      "id": "1",
+      "numCode": "051",
+      "charCode": "AMD",
+      "nominal": "10",
+      "name": "Armenian Dram",
+      "value": 0.4161
+    },
+    {
+      "id": "3",
+      "numCode": "036",
+      "charCode": "AUD",
+      "nominal": "1",
+      "name": "Australian Dollar",
+      "value": 14.3942
+    },
+    {
+      "id": "4",
+      "numCode": "944",
+      "charCode": "AZN",
+      "nominal": "1",
+      "name": "Azerbaijanian Manat",
+      "value": 12.8784
+    },
+    {
+      "id": "6",
+      "numCode": "975",
+      "charCode": "BGN",
+      "nominal": "1",
+      "name": "Bulgarian Lev",
+      "value": 11.3168
+    },
+    {
+      "id": "50",
+      "numCode": "974",
+      "charCode": "BYR",
+      "nominal": "100",
+      "name": "Belarussian Ruble",
+      "value": 0.0979
+    },
+    {
+      "id": "8",
+      "numCode": "124",
+      "charCode": "CAD",
+      "nominal": "1",
+      "name": "Canadian Dollar",
+      "value": 14.5068
+    },
+    {
+      "id": "9",
+      "numCode": "756",
+      "charCode": "CHF",
+      "nominal": "1",
+      "name": "Swiss Franc",
+      "value": 19.9459
+    },
+    {
+      "id": "54",
+      "numCode": "156",
+      "charCode": "CNY",
+      "nominal": "1",
+      "name": "Chinese yuan renminbi",
+      "value": 3.0964
+    },
+    {
+      "id": "10",
+      "numCode": "203",
+      "charCode": "CZK",
+      "nominal": "1",
+      "name": "Czech Koruna",
+      "value": 0.8191
+    },
+    {
+      "id": "12",
+      "numCode": "208",
+      "charCode": "DKK",
+      "nominal": "1",
+      "name": "Danish Krone",
+      "value": 2.9664
+    },
+    {
+      "id": "17",
+      "numCode": "826",
+      "charCode": "GBP",
+      "nominal": "1",
+      "name": "Pound Sterling",
+      "value": 29.085
+    },
+    {
+      "id": "18",
+      "numCode": "981",
+      "charCode": "GEL",
+      "nominal": "1",
+      "name": "Georgian Lar",
+      "value": 8.2888
+    },
+    {
+      "id": "63",
+      "numCode": "344",
+      "charCode": "HKD",
+      "nominal": "1",
+      "name": "Hong Kong dollar",
+      "value": 2.6178
+    },
+    {
+      "id": "20",
+      "numCode": "191",
+      "charCode": "HRK",
+      "nominal": "1",
+      "name": "Croatian Kuna",
+      "value": 2.8897
+    },
+    {
+      "id": "21",
+      "numCode": "348",
+      "charCode": "HUF",
+      "nominal": "100",
+      "name": "Hungarian Forint",
+      "value": 7.1177
+    },
+    {
+      "id": "49",
+      "numCode": "376",
+      "charCode": "ILS",
+      "nominal": "1",
+      "name": "Shekel Israelit",
+      "value": 5.1503
+    },
+    {
+      "id": "65",
+      "numCode": "356",
+      "charCode": "INR",
+      "nominal": "10",
+      "name": "Indian rupee",
+      "value": 3.0026
+    },
+    {
+      "id": "23",
+      "numCode": "352",
+      "charCode": "ISK",
+      "nominal": "10",
+      "name": "Iceland Krona",
+      "value": 1.5643
+    },
+    {
+      "id": "25",
+      "numCode": "392",
+      "charCode": "JPY",
+      "nominal": "100",
+      "name": "Japanese Yen",
+      "value": 16.7852
+    },
+    {
+      "id": "26",
+      "numCode": "417",
+      "charCode": "KGS",
+      "nominal": "10",
+      "name": "Kyrgyzstan Som",
+      "value": 2.6841
+    },
+    {
+      "id": "66",
+      "numCode": "410",
+      "charCode": "KRW",
+      "nominal": "100",
+      "name": "South Korean won",
+      "value": 1.6969
+    },
+    {
+      "id": "59",
+      "numCode": "414",
+      "charCode": "KWD",
+      "nominal": "1",
+      "name": "Kuwaiti Dinar",
+      "value": 67.1802
+    },
+    {
+      "id": "27",
+      "numCode": "398",
+      "charCode": "KZT",
+      "nominal": "10",
+      "name": "Kazakhstan Tenge",
+      "value": 0.5655
+    },
+    {
+      "id": "62",
+      "numCode": "807",
+      "charCode": "MKD",
+      "nominal": "10",
+      "name": "Macedonian denar",
+      "value": 3.5918
+    },
+    {
+      "id": "56",
+      "numCode": "458",
+      "charCode": "MYR",
+      "nominal": "1",
+      "name": "Malaysian Ringgit",
+      "value": 4.8948
+    },
+    {
+      "id": "32",
+      "numCode": "578",
+      "charCode": "NOK",
+      "nominal": "1",
+      "name": "Norwegian Krone",
+      "value": 2.3568
+    },
+    {
+      "id": "53",
+      "numCode": "554",
+      "charCode": "NZD",
+      "nominal": "1",
+      "name": "New Zealand Dollar",
+      "value": 13.168
+    },
+    {
+      "id": "33",
+      "numCode": "985",
+      "charCode": "PLN",
+      "nominal": "1",
+      "name": "Polish Zloty",
+      "value": 5.0299
+    },
+    {
+      "id": "48",
+      "numCode": "941",
+      "charCode": "RSD",
+      "nominal": "100",
+      "name": "Serbian Dinar",
+      "value": 18.023
+    },
+    {
+      "id": "37",
+      "numCode": "752",
+      "charCode": "SEK",
+      "nominal": "1",
+      "name": "Swedish Krona",
+      "value": 2.3831
+    },
+    {
+      "id": "51",
+      "numCode": "972",
+      "charCode": "TJS",
+      "nominal": "1",
+      "name": "Tajikistan Somoni",
+      "value": 2.5972
+    },
+    {
+      "id": "60",
+      "numCode": "934",
+      "charCode": "TMT",
+      "nominal": "1",
+      "name": "Turkmenistan Manat",
+      "value": 5.8199
+    },
+    {
+      "id": "42",
+      "numCode": "949",
+      "charCode": "TRY",
+      "nominal": "1",
+      "name": "Turkish Lira",
+      "value": 6.8632
+    },
+    {
+      "id": "45",
+      "numCode": "860",
+      "charCode": "UZS",
+      "nominal": "100",
+      "name": "Uzbekistan Sum",
+      "value": 0.7194
+    },
+    {
+      "id": "46",
+      "numCode": "960",
+      "charCode": "XDR",
+      "nominal": "1",
+      "name": "Special Drawing Rights",
+      "value": 28.0658
+    }
+  ]
+}}
